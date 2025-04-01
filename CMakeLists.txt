@@ -150,7 +150,15 @@ include(${g3log_SOURCE_DIR}/test_unit/Test.cmake)
 # For OSX you can also install an older version using 'brew install'
 #
 # ==========================================================================
-include(${g3log_SOURCE_DIR}/CPackLists.txt)
+if(INSTALL_G3LOG_LIB_ONLY)
+  install(TARGETS g3log
+    RUNTIME DESTINATION ${G3LOG_LIB_INSTALL_PATH}
+    ARCHIVE DESTINATION ${G3LOG_LIB_INSTALL_PATH}
+    LIBRARY DESTINATION ${G3LOG_LIB_INSTALL_PATH}
+  )
+else()
+  include(${g3log_SOURCE_DIR}/CPackLists.txt)
+endif()
 
 if(MINGW)
   # this enables strerror_s

@@ -175,8 +175,6 @@ ENDIF (MSVC OR MINGW)
 message( STATUS "\n\n\n" )
 
 option(INSTALL_G3LOG "Enable installation of g3log. (Projects embedding g3log may want to turn this OFF.)" ON)
-
-
-
-
-
+option(INSTALL_G3LOG_LIB_ONLY "Install g3log lib only." OFF)
+option(G3LOG_LIB_INSTALL_PATH "The path g3log lib should be installed to." OFF)
+option(G3LOG_LIB_NO_SOVERSION "Disable setting soversion for g3log lib." OFF)
